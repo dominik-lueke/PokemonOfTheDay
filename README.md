@@ -1,4 +1,4 @@
-# Pokémon Of The Das
+# Pokémon Of The Day
 Scriptable iOS Widget to display a new random Pokémon every day
 
 ## Verwendung
