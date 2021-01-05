@@ -292,7 +292,7 @@ class PokemonSelector {
     pokemonId = Number.isNaN(pokemonId)? this.maxPokemonId : pokemonId
     // get random seed based on today
     const oneday = (24 * 60 * 60 * 1000)
-    const todayInDays= getStartOfCurrentInterval(oneday) / oneday
+    const todayInDays = Math.ceil(getStartOfCurrentInterval(oneday) / oneday)
     let randomSeed = this.randomDataCache.getRandomSeed(todayInDays)
     this.randomDataCache.saveRandomSeed(randomSeed)
     let random = randomSeed[todayInDays][currentInterval]
