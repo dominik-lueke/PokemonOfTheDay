@@ -4,7 +4,7 @@ Scriptable iOS Widget to display a new random Pokémon every day
 ## Installation
 
 * Download Scriptable App for iOS Devices - https://scriptable.app
-* Download/Import of `Pokémon of the Day.js` File to `iCloud/Scriptable`
+* Download/Import of `PokemonOfTheDay.js` File to `iCloud/Scriptable`
 * Create new Scriptable Widget on the Homescreen and choose script `Pokemon of the Day`
 
 ## Features
