@@ -63,10 +63,11 @@ const isGerman = Device.locale() == "de_DE"
 const language = isGerman ? "de" : "en"
 
 // global functions + values for update interval
-const getStartOfCurrentInterval = (interval) => (Math.floor(Date.now() / interval) * interval)
-const updateIntervalInMillis = (updateInterval * 60 * 60 * 1000)
+const getStartOfCurrentInterval = (interval) => (Math.floor(Date.now() / interval) * interval) + (new Date().getTimezoneOffset()*60*1000)
+const oneHourInMillis = (60 * 60 * 1000)
+const updateIntervalInMillis = (updateInterval * oneHourInMillis)
 const currentIntervalStartInMillis = getStartOfCurrentInterval(updateIntervalInMillis)
-const currentInterval = Math.floor(new Date().getHours() / updateInterval)
+const currentInterval = (Math.floor(new Date().getHours() / updateInterval) * updateInterval)
 
 
 
@@ -82,7 +83,7 @@ class PokemonOfTheDayWidget{
     // init widget
     this.widget = new ListWidget()
     this.widget.setPadding( 0, 0, 0, 0 )
-    this.widget.refreshAfterDate = new Date (currentIntervalStartInMillis + updateIntervalInMillis) // only update once in the given interval. Compute the start of the current interval and add one interval
+    this.widget.refreshAfterDate = new Date (currentIntervalStartInMillis + oneHourInMillis) // only update once an hour
 
     // init data
     this.defaultPokemonId = 132 // ditto
@@ -92,7 +93,8 @@ class PokemonOfTheDayWidget{
     this.widgetHeight = 338
     this.widgetWidth = 338
     this.largeWidget = config.runsInApp || config.runsWithSiri || config.widgetFamily == "large"
-    this.imageScaleFactor =  this.largeWidget ? 0.8 : 0.3
+    this.mediumWidget = config.widgetFamily == "medium"
+    this.imageScaleFactor =  this.largeWidget ? 0.8 : this.mediumWidget ? 0.35 : 0.3
     this.titleFontSize = this.largeWidget ? 18 : 11
     this.infoFontSize = this.largeWidget ? 14: 10
     this.weblinkFontSize = 10
@@ -148,7 +150,7 @@ class PokemonOfTheDayWidget{
     // dimensions
     const appearanceInfoText = `${ data.height * 10}cm • ${ Number((data.weight * 0.1).toFixed(1))}kg`
     // info
-    const infoSeparatorText = this.largeWidget ? " | " : "\n"
+    const infoSeparatorText = this.largeWidget || this.mediumWidget ? " | " : "\n"
     const wInfo = this.addInfo(generalInfoText + infoSeparatorText + appearanceInfoText)
     // weblink
     if (config.runsInApp) {
