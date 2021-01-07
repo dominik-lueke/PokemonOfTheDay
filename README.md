@@ -1,4 +1,5 @@
 # Pokémon Of The Day
+
 Scriptable iOS Widget to display a new random Pokémon every day
 
 ## Installation
@@ -11,8 +12,8 @@ Scriptable iOS Widget to display a new random Pokémon every day
 
 ### ScriptDude
 
-* Get ScriptDude here: https://scriptdu.de/#installation
-* Get `Pokémon of the Day` here: https://scriptdu.de/?name=Pok%C3%A9mon+of+the+Day&source=https://raw.githubusercontent.com/dominik-lueke/PokemonOfTheDay/main/PokemonOfTheDay.js&docs=https://github.com/dominik-lueke/PokemonOfTheDay/blob/main/README.md
+* Get `Scriptable` and `ScriptDude` from [https://scriptdu.de](https://scriptdu.de/#installation)
+* Get `Pokémon of the Day` [here](https://scriptdu.de/?name=Pok%C3%A9mon%20of+%20the%20Day&source=https://raw.githubusercontent.com/dominik-lueke/PokemonOfTheDay/main/PokemonOfTheDay.js&docs=https://github.com/dominik-lueke/PokemonOfTheDay/blob/main/README.md)
 
 ## Features
 
@@ -58,4 +59,5 @@ Default is `24`.
 `;1`: Display a new random Pokémon every hour
 
 ## Please Note
-The script caches Pokémon data and images in directory `iCloud\scriptable`
+
+* The script caches Pokémon data and images in directory `iCloud\scriptable`
