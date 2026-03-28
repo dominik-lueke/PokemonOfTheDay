@@ -35,7 +35,7 @@ Scriptable iOS Widget to display a new random Pokémon every day
 #### MAX_ID (optional)
 Set maximum id of Pokémon to choose from randomly 
    
-Default is `898`.
+Default is `1025`.
      
 E.g. set to 151 to only choose from Generation I
      
