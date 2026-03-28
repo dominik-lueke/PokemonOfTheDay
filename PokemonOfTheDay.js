@@ -1,3 +1,7 @@
+// Variables used by Scriptable.
+// These must be at the very top of the file. Do not edit.
+// icon-color: blue; icon-glyph: star;
+// ------------------------------------------
 // ------------------------------------------
 //              POKÉMON OF THE DAY
 // ------------------------------------------
@@ -80,7 +84,6 @@ class PokemonOfTheDayWidget{
     // init widget
     this.widget = new ListWidget()
     this.widget.setPadding( 0, 0, 0, 0 )
-//     this.widget.refreshAfterDate = new Date (currentIntervalStartInMillis + oneHourInMillis) // only update once an hour
 
     // init data
     this.defaultPokemonId = 132 // ditto
@@ -512,11 +515,3 @@ Script.setWidget( widget )
 Script.complete()
 // delete old cache
 new WidgetDataCache().deleteCacheOlderThan(30)
-// let pds= new PokemonDataService()
-// for(let id=1;id<=898;id++){
-//   let data = await pds.getData(id)
-  // no data 
-//   if ( data ) {
-//     let image = await pds.getImage(id, data.imageUrl)
-//   }
-// }
