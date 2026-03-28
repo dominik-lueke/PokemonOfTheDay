@@ -2,7 +2,6 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: blue; icon-glyph: star;
 // ------------------------------------------
-// ------------------------------------------
 //              POKÉMON OF THE DAY
 // ------------------------------------------
 // 
