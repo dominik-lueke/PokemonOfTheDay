@@ -1,6 +1,3 @@
-// Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
-// icon-color: blue; icon-glyph: star;
 // ------------------------------------------
 //              POKÉMON OF THE DAY
 // ------------------------------------------
@@ -25,7 +22,7 @@
 //
 //   - MAX_ID (OPTIONAL)
 //     SET MAXIMUM ID OF POKEMON TO
-//     CHOOSE FROM. DEFAULT IS 898. 
+//     CHOOSE FROM. DEFAULT IS 1025. 
 // 
 //     E.G. SET TO 151 TO ONLY USE POKEMON FROM
 //     GENERATION I.
@@ -83,7 +80,7 @@ class PokemonOfTheDayWidget{
     // init widget
     this.widget = new ListWidget()
     this.widget.setPadding( 0, 0, 0, 0 )
-    this.widget.refreshAfterDate = new Date (currentIntervalStartInMillis + oneHourInMillis) // only update once an hour
+//     this.widget.refreshAfterDate = new Date (currentIntervalStartInMillis + oneHourInMillis) // only update once an hour
 
     // init data
     this.defaultPokemonId = 132 // ditto
@@ -275,7 +272,7 @@ class PokemonSelector {
 // 
   constructor(){
     this.randomDataCache = new RandomDataCache()
-    this.maxPokemonId = 898
+    this.maxPokemonId = 1025
     this.singlePokemonIdPrefix = "#"
   }
 
@@ -515,3 +512,11 @@ Script.setWidget( widget )
 Script.complete()
 // delete old cache
 new WidgetDataCache().deleteCacheOlderThan(30)
+// let pds= new PokemonDataService()
+// for(let id=1;id<=898;id++){
+//   let data = await pds.getData(id)
+  // no data 
+//   if ( data ) {
+//     let image = await pds.getImage(id, data.imageUrl)
+//   }
+// }
